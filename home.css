@@ -33,7 +33,9 @@ header {
 }
 
 .burgerMenuButton {
-  padding: 8px;
+    padding: 8px;
+    position: absolute;
+    right: 8px;
 }
 
 .bar {
@@ -46,36 +48,30 @@ header {
     background-color: #94B9EB;
 }
 
-.burgerMenuButton.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.burgerMenuButton.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.burgerMenuButton.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
 .burger {
-    width: 100vw;
+    display: none;
+}
+
+#burger:checked ~ .burger{
     display: flex;
     justify-content: flex-end;
+    width: 100vw;
 }
 
+#burger {
+    display: none;
+}
+
+#x {
+    display: none;
+}
 
 .burgerMenu {
-    position: fixed;
-    left: -100%;
+    position: absolute;
     background-color: #94B9EB;
     width: 256px;
     height: 100vh;
     transition: 0.3s;
-}
-
-.burgerMenu.active {
-    left: 10%;
 }
 
 .burgerTop {
@@ -136,10 +132,16 @@ header {
     align-items: center;
 }
 
-.visitVisionarium svg {
+.mobile {
     position: absolute;
     top: 150px;
     z-index: 10;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.desktopLogo {
+    display: none;
 }
 
 .headings {
@@ -167,9 +169,11 @@ header {
     height:426px;
     display: flex;
     align-items: center;
+    background-color: #FAF1F0;
 }
 
 .sliderWrapper h1 {
+    text-align: center;
     font-family: oi, sans-serif;
     font-weight: 100;
     font-size: 100px;
@@ -201,6 +205,7 @@ header {
 
 #next, #prev{
     position: absolute;
+    text-align: center;
     top: 1204px;
     color: #94B9EB;
     background-color: transparent;
@@ -210,9 +215,9 @@ header {
     font-weight: bold;
     left: 90%;
 }
+
 #next{
     left: 3%;
-    right: 400px;
 }
 
 .textWrapper {
@@ -241,9 +246,6 @@ header {
     height: 222px;
 }
 
-/*start of visiting hours*/
-
-
 .imageWrapper img {
     width: 190px;
     height: 280px;
@@ -251,8 +253,10 @@ header {
     border-radius: 10px;
 }
 
+/*start of visiting hours*/
+
 .mapImage {
-    width: 430px;
+    width: 100vw;
     height: 276px;
     object-fit: cover;
 }
@@ -262,6 +266,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 22px;
+    background-color: #FAF1F0;
 }
 
 .visitingHours {
@@ -271,6 +276,7 @@ header {
 }
 
 .visitingHours h2 {
+    color: #001A28;
     font-size: 56px;
 }
 
@@ -291,6 +297,7 @@ header {
 
 .visitingHours ul li {
     font-size: 24px;
+    color: #001A28;
 }
 
 .bold {
@@ -325,5 +332,146 @@ header {
     font-size: .5rem;
     font-weight: 400;
 }
+
+@media (min-width: 800px) {
+    .burgerMenuButton {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    .logo {
+        padding-left: 29px;
+        font-size: 32px;
+    }
+
+    .navDesktop{
+        display: flex;
+        list-style: none;
+        padding: 17px 29px;
+        gap: 36px;
+    }
+
+
+    .navDesktop li a {
+        color: #FAF1F0;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .navDesktop li:nth-child(1) {
+        text-decoration: underline;
+        color: #FAF1F0;
+    }
+
+
+    .mobile {
+        display: none;
+    }
+
+    .desktopLogo {
+        display: flex;
+        position: absolute;
+        top: 150px;
+        z-index: 10;
+        width: 100vw;
+    }
+
+    .visitVisionarium {
+        height: 1069px;
+    }
+
+    .visitVisionarium h2{
+        font-size: 200px;
+    }
+
+    #visionarium {
+        font-size: 8.3vw;
+        width: 100vw;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .sliderWrapper {
+        height: 1066px;
+        padding-top: 16px;
+    }
+
+    .sliderWrapper h1 {
+        font-size: 24vw;
+        padding: 0;
+    }
+
+    .item {
+        width: 489px;
+        height: 721px;
+        border-radius: 25px;
+        left: calc(53% - 300px);
+        top: 1243px;
+    }
+
+    .item:hover {
+        cursor: pointer;
+    }
+
+    #next, #prev{
+        top: 1600px;
+    }
+
+    #next, #prev:hover{
+        cursor: pointer;
+        color: #73a4e7;
+    }
+
+    .textWrapper {
+        height: 148px;
+        width: 489px;
+    }
+
+    .textWrapper h2 {
+        height: 148px;
+        font-size: 40px;
+    }
+
+    .imageWrapper {
+        width: 489px;
+        height: 572px;
+    }
+
+    .imageWrapper img {
+        width: 489px;
+        height: 721px;
+    }
+
+    .visitingHoursWrapper {
+        flex-direction: row-reverse;
+        height: 1069px;
+    }
+
+    .map img {
+        height: 1069px;
+        width: 50vw;
+    }
+
+    .visitingHours {
+        display: flex;
+        justify-content: center;
+        width: 50vw;
+        text-align: center;
+    }
+
+    .footerWrapper ul li {
+        font-size: 1rem;
+
+    }
+}
+
+
+
+
+
+
 
 

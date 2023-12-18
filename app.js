@@ -34,11 +34,3 @@ prev.onclick = function(){
     active = active + 1 >= 0 ? active + 1 : active;
     loadShow();
 }
-
-const burgerMenuButton = document.querySelector(".burgerMenuButton")
-const burgerMenu = document.querySelector(".burgerMenu")
-
-burgerMenuButton.addEventListener("click", () => {
-    burgerMenuButton.classList.toggle(active);
-    burgerMenu.classList.toggle(active);
-})
