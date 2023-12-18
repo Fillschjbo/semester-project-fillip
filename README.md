@@ -1,1 +1,3 @@
-readme
+Report
+
+The assignment given to us was to make a website for a new  science museum opening in town. The museum wanted a website that appealed to kids and teens, was informative, and followed WCAG guidelines. To achieve this I wanted to make a playfull design that used colors associated with truthfulness and intelligence. For inspiration for the website, I used awwwards.com and looked at several other museums' websites. When coding the website I used HTML, CSS, and some javascript to make a carousel, using a youtube tutorial. The museum wanted the website to be responsive, so I did this using media queries. When working on the project I followed the project methodology plan made in an assignment. 
