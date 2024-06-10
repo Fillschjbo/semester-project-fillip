@@ -16,6 +16,20 @@ For this project, I wanted to make a fun and playful design. It was originally d
 git clone https://github.com/Fillschjbo/semester-project-fillip.git
 ```
 
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run start
+```
+
 ## Contact
 
 E-mail: felipehusebo@gmeail.com
